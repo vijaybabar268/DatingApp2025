@@ -1,5 +1,3 @@
-using API.Extensions;
-
 namespace API.Entities;
 
 public class AppUser
@@ -22,8 +20,6 @@ public class AppUser
     // Navigation property
     public List<Photo> Photos { get; set; } = [];
 
-    // public int GetAge()
-    // {
-    //     return DateOfBirth.CalculateAge();
-    // }
+    public List<UserLike> LikedByUsers { get; set; } = [];
+    public List<UserLike> LikedUsers { get; set; } = [];
 }
