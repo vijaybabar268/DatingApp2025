@@ -1,4 +1,3 @@
-using System.Security.Cryptography.Xml;
 using API.DTOs;
 using API.Entities;
 using API.Helpers;
@@ -6,7 +5,6 @@ using API.Interfaces;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 
 namespace API.Data;
 
@@ -59,7 +57,7 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
     {
         return await context.Users
             .Include(p => p.Photos)
-            .SingleOrDefaultAsync(u => u.UserName.ToLower() == username.ToLower());
+            .SingleOrDefaultAsync(u => u.NormalizedUserName == username.ToUpper());
     }
 
     // Get All Users

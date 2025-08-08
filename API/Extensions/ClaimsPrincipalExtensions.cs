@@ -15,7 +15,7 @@ public static class ClaimsPrincipalExtensions
 
     public static int GetUserId(this ClaimsPrincipal user)
     {
-        var userId = int.Parse(user.FindFirstValue(ClaimTypes.NameIdentifier));
+        var userId = int.Parse(user.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
         if (userId <= 0) throw new Exception("Cannot get userId from token");
 

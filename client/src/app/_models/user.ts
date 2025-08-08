@@ -1,9 +1,10 @@
 export interface User {
-    username: string,
-    knowsAs: string,
-    gender: string,
-    token: string,
-    photoUrl?: string
+    username: string;
+    knowsAs: string;
+    gender: string;
+    token: string;
+    photoUrl?: string;
+    roles: string[];
 }
 
 // Basic's about typescript
